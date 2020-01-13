@@ -14,11 +14,29 @@
                           - i3
                           - python3
                           - python3-pip
+                          - konsole
 
-        - name: Set configuration files
+        - name: Set vim configuration file
           copy:
                   src: ./vimrc
                   dest: ~/.vimrc
+        - name: Set i3 configuration file
           copy:
                   src: ./i3.conf
                   dest: ~/.config/i3/config
+        - name: Set i3status configuration file
+          copy:
+                  src: ./i3status.conf
+                  dest: /etc/i3status.conf
+        - name: Set konsole configuration file
+          copy:
+                  src: ./konsolerc
+                  dest: ~/.config/konsolerc
+
+        - name: Set vim as default editor
+          shell: update-alternatives --auto vim
+
+        - name: Cleanup
+          apt:
+                  autoclean: yes
+                  autoremove: yes
