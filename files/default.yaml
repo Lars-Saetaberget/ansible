@@ -16,6 +16,7 @@
                           - python3-pip
                           - konsole
                           - zenity
+                          - imagemagick
 
         - name: Set vim configuration file
           copy:
@@ -33,6 +34,10 @@
           copy:
                   src: ./konsolerc
                   dest: ~/.config/konsolerc
+        - name: Copy lock-script to PATH
+          copy:
+                  src: ./lockscript
+                  dest: /usr/local/bin/lockscript
 
         - name: Set vim as default editor
           shell: update-alternatives --set editor $(which vim.basic)
