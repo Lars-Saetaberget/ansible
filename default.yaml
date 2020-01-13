@@ -34,7 +34,7 @@
                   dest: ~/.config/konsolerc
 
         - name: Set vim as default editor
-          shell: update-alternatives --auto vim
+          shell: update-alternatives --set editor $(which vim.basic)
 
         - name: Cleanup
           apt:
