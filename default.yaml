@@ -19,3 +19,6 @@
           copy:
                   src: ./vimrc
                   dest: ~/.vimrc
+	  copy:
+	  	  src: ./i3.conf
+		  dest: ~/.config/i3/config
