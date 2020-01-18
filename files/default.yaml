@@ -20,6 +20,14 @@
                           - imagemagick
                           - rofi
 
+        - name: Ensure .vim colors directory exists
+          file:
+                  path: ~/.vim/colors
+                  state: directory
+        - name: Copy afterglow vim color
+          copy:
+                  src: ./afterglow.vim
+                  dest: ~/.vim/colors/
         - name: Set vim configuration file
           copy:
                   src: ./vimrc
