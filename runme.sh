@@ -5,7 +5,7 @@ if [[ $EUID -ne 0 ]]; then
 	exit 1
 fi
 
-apt install ansible
+apt install -y ansible
 
 # Set correct interface name for i3status
 iface=$(netstat -i | egrep -v "Kernel|Iface|^lo " | cut -f 1 -d ' ')
