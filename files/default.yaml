@@ -4,6 +4,7 @@
   tasks:
         - name: Upgrade system
           apt:
+                  update_cache: yes
                   upgrade: safe
 
         - name: Install must-have packages
