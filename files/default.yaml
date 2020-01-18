@@ -53,7 +53,9 @@
         - name: Set vim as default editor
           shell: update-alternatives --set editor $(which vim.basic)
 
-        - name: Cleanup
+        - name: Autoremove
+          apt:
+                  autoremove: yes
+        - name: Autoclean
           apt:
                   autoclean: yes
-                  autoremove: yes
